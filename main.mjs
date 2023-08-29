@@ -14,8 +14,10 @@ app.get("/", async (req, res) => {
 
     try {
         const result = await summaly(url);
+        console.log(`summaly: ${url}`)
         res.json(result);
     } catch (err) {
+        console.error(err);
         res.status(500).json({ error: err.message });
     }
 });
