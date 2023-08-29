@@ -1,12 +1,13 @@
 import express from 'express';
 import { summaly } from 'summaly';
+import cors from 'cors';
 
 const app = express();
 app.listen(process.env.PORT, () => console.log(`Server running on port 3000 ${process.env.PORT}`));
 
 // cors from environment variable
 const cors = process.env.CORS || '*';
-app.use(require('cors')({ origin: cors }));
+app.use(cors({ origin: cors }));
 
 app.get("/", async (req, res) => {
     const url = req.query.url;
