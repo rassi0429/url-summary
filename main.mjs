@@ -6,8 +6,8 @@ const app = express();
 app.listen(process.env.PORT, () => console.log(`Server running on port 3000 ${process.env.PORT}`));
 
 // cors from environment variable
-const cors = process.env.CORS || '*';
-app.use(cors({ origin: cors }));
+const corsValiable = process.env.CORS || '*';
+app.use(cors({ origin: corsValiable }));
 
 app.get("/", async (req, res) => {
     const url = req.query.url;
