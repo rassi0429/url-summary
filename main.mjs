@@ -3,7 +3,7 @@ import { summaly } from 'summaly';
 import cors from 'cors';
 
 const app = express();
-app.listen(process.env.PORT, () => console.log(`Server running on port 3000 ${process.env.PORT}`));
+app.listen(process.env.PORT, (srv) => console.log(`Server running on port ${srv.address().port}`));
 
 // cors from environment variable
 const corsValiable = process.env.CORS || '*';
